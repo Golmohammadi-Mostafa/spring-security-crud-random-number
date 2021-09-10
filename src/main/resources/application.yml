@@ -1,0 +1,35 @@
+server:
+  port: 8080 # This is the default port anyway, but you can change it here
+spring:
+  application:
+    name: random-number
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    #    driver-class-name: org.h2.Driver
+    #    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+    url: jdbc:postgresql://localhost:5432/random
+    #    url: jdbc:h2:mem:random
+    #    url: jdbc:derby:local;create=true
+    username: admin
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: none # When you launch the application for the first time - switch "update" at "create"
+    show-sql: true
+    generate-ddl: false
+    open-in-view: false
+    #    database: h2
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    #    database-platform: org.hibernate.dialect.DerbyTenSevenDialect
+    #    database-platform: org.hibernate.dialect.H2Dialect
+
+  liquibase:
+    enabled: true
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds

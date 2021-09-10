@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/20211009090900_init_entity_user.xml
+  - include:
+      file: db/changelog/20211009090915_init_entity_role.xml
+  - include:
+      file: db/changelog/20211009090920_init_users_roles.xml
+  - include:
+      file: db/changelog/20211009090921_add_data.xml
+  - include:
+      file: db/changelog/20211009090922_init_number.xml
